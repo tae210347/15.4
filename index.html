@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>เข้าสู่ระบบเพื่อดู QR Code</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #fff2f5;
+    }
+    #qr-section {
+      display: none;
+      margin-top: 30px;
+    }
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      background-color: #ff7fa1;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+    button:hover {
+      background-color: #ff5c85;
+    }
+  </style>
+</head>
+<body>
+  <h2> i need password (ถ้าไม่ถูกเสียใจ)</h2>
+  <input type="password" id="password" placeholder="ใส่รหัสผ่านที่นี่">
+  <br>
+  <button onclick="checkPassword()">ยืนยัน</button>
+
+  <div id="qr-section">
+    <h3>QR Code ของคุณ</h3>
+    <img src="qrcode_193120781_b7b92169e0bf5e0e36856f1555b1a432.png" alt="QR Code" width="250">
+  </div>
+
+  <script>
+    function checkPassword() {
+      const correctPassword = "17112567"; // ← รหัสผ่านใหม่
+      const userInput = document.getElementById("password").value;
+      if (userInput === correctPassword) {
+        document.getElementById("qr-section").style.display = "block";
+      } else {
+        alert("รหัสผ่านไม่ถูกต้อง");
+      }
+    }
+  </script>
+</body>
+</html>
